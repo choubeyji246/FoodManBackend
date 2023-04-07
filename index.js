@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const Razorpay = require('razorpay');
 const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 5000;
 // Initialize Razorpay instance
 const razorpay = new Razorpay({
   key_id:'rzp_test_JWxfB6ndDJqrtZ',
