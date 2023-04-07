@@ -91,22 +91,7 @@ router.post(
     let email = req.body.email;
     try {
       let userData = await User.findOne({ email });
-      // console.log(userData);
-      // if (!userData) {
-      
-      //   return res
-      //     .status(400)
-      //     .json({ errors: "Try logging with valid credentials" });
-      // }
-      // const saltRounds = 10;
-      // const plainPassword = req.body.password;
-      // pass=bcrypt.hash(plainPassword,saltRounds)
-      // if(req.body.password !== userData.password){
-        
-      //   return res
-      //   .status(400)
-      //   .json({ errors: "Try logging with valid credentials" });
-      // }
+     
       const pwdCompare = await bcrypt.compare(req.body.password, userData.password);
       if (!pwdCompare) {
         return res.status(400).json({ success: false, errors: "Try Logging in with correct credentials" });
@@ -122,24 +107,7 @@ router.post(
         
       
       }
-      // }); // this return true false.
-      //   if (!pwdCompare) {
-      //       return res.status(401).json({errors: "Try Logging in with correct credentials" })
-      //   }
-
-      ////
-      
-
-      
-
-      //  const data={
-      //   user:{
-      //     id:userData.id
-      //   }
-      // }
-
-      // const authToken=jwt.sign(data,jwtSecret)
-      // return res.json({success:true,authToken:authToken})
+     
       
     } catch (error) {
       console.log(error);
