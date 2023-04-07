@@ -1,5 +1,7 @@
+require('dotenv').config();
 const { default: mongoose } = require("mongoose");
 const url=process.env.dataBase_url
+
 
 const uri =url
 mongoose.set("strictQuery", false);

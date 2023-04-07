@@ -1,18 +1,17 @@
+require('dotenv').config();
 const express = require('express');
 const mongoDB = require('./db');
 const bodyParser = require('body-parser');
 const Razorpay = require('razorpay');
 const cors = require('cors');
-const key_id=process.env.key_id
-const key_secret=process.env.key_secret
-
 const app = express();
 const port = 5000;
-
+const key_id=process.env.key_id
+const key_secret=process.env.key_secret
 // Initialize Razorpay instance
 const razorpay = new Razorpay({
-  key_id:key_id ,
-  key_secret:key_secret ,
+  key_id:key_id,
+  key_secret:key_secret,
 });
 
 // Middleware
